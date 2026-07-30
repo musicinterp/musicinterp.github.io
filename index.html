@@ -1,161 +1,248 @@
-<title>musicinterp — Poster references</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<title>Music Interpolation — Poster references</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;700&family=Castoro:ital@0;1&display=swap">
+
 <style>
-  :root {
-    --paper: #eef0f3;
-    --panel: #f7f8fa;
-    --ink: #16191f;
-    --ink-soft: #4a515c;
-    --ink-faint: #767e8b;
-    --rule: #d3d8df;
-    --accent: #24446f;
-    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-    --sans: ui-sans-serif, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --paper: #12151a; --panel: #191d24; --ink: #e7eaef; --ink-soft: #aab2bf;
-      --ink-faint: #7f8895; --rule: #2b313a; --accent: #9ab8de;
-    }
-  }
-  :root[data-theme="dark"] {
-    --paper: #12151a; --panel: #191d24; --ink: #e7eaef; --ink-soft: #aab2bf;
-    --ink-faint: #7f8895; --rule: #2b313a; --accent: #9ab8de;
-  }
-  :root[data-theme="light"] {
-    --paper: #eef0f3; --panel: #f7f8fa; --ink: #16191f; --ink-soft: #4a515c;
-    --ink-faint: #767e8b; --rule: #d3d8df; --accent: #24446f;
-  }
-
   body {
-    background: var(--paper); color: var(--ink);
-    font-family: var(--sans); font-size: 17px; line-height: 1.65;
-    margin: 0; padding: 0 1.25rem 5rem;
-    -webkit-text-size-adjust: 100%;
-  }
-  .wrap { max-width: 40rem; margin: 0 auto; }
-
-  header { padding: 3rem 0 2rem; }
-  .eyebrow {
-    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--ink-faint); margin: 0 0 1rem;
-  }
-  h1 {
-    font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 7vw, 2.9rem);
-    line-height: 1.12; letter-spacing: -0.015em; text-wrap: balance; margin: 0 0 1rem;
-  }
-  .standfirst {
-    font-family: var(--serif); font-size: 1.15rem; line-height: 1.5;
-    color: var(--ink-soft); text-wrap: pretty; margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #fff;
   }
 
-  h2 {
-    font-family: var(--serif); font-weight: 400; font-size: 1.5rem;
-    line-height: 1.25; letter-spacing: -0.01em; text-wrap: balance;
-    margin: 3rem 0 0.6rem; padding-top: 1.3rem; border-top: 1px solid var(--rule);
-  }
-  .sub {
-    font-size: 0.88rem; color: var(--ink-faint); margin: 0 0 1.6rem;
-    line-height: 1.55; text-wrap: pretty;
+  .title, .subtitle, .publication-title, .button {
+    font-family: 'Google Sans', 'Noto Sans', sans-serif;
   }
 
-  ol.refs { list-style: none; margin: 0; padding: 0; counter-reset: ref; }
-  ol.refs li {
-    position: relative; padding: 0 0 0 2.2rem; margin: 0 0 1.5rem;
-    text-wrap: pretty;
+  .hero.is-light.is-small {
+    background-color: #f5f5f5;
   }
-  ol.refs li::before {
-    counter-increment: ref; content: counter(ref) ".";
-    position: absolute; left: 0; top: 0.08em;
-    font-family: var(--mono); font-size: 0.8rem; color: var(--ink-faint);
+
+  .publication-title {
+    font-family: 'Google Sans', 'Noto Sans', sans-serif;
+    line-height: 1.2;
+  }
+
+  .publication-subtitle {
+    font-family: 'Castoro', serif;
+    color: #4a4a4a;
+  }
+
+  .publication-authors {
+    font-family: 'Google Sans', 'Noto Sans', sans-serif;
+    margin-top: 0.75rem;
+  }
+  .publication-authors .author-block {
+    margin-right: 0.35rem;
+  }
+  .publication-authors .affiliation {
+    color: #4a4a4a;
+  }
+
+  .publication-links {
+    margin-top: 1.75rem;
+  }
+  .publication-links .button {
+    border-radius: 9999px;
+    background-color: #363636;
+    border-color: transparent;
+    color: #fff;
+    font-weight: 500;
+  }
+  .publication-links .button:hover {
+    background-color: #1f1f1f;
+    color: #fff;
+  }
+
+  .section {
+    padding: 3rem 1.5rem;
+  }
+
+  .content ol.ref-list:not([type]) {
+    list-style: none;
+    margin-left: 0;
+    counter-reset: ref;
+  }
+  .content ol.ref-list li {
+    position: relative;
+    padding-left: 2.4rem;
+    margin-bottom: 1.4rem;
+  }
+  .content ol.ref-list li::before {
+    counter-increment: ref;
+    content: counter(ref) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #8a8a8a;
+    font-variant-numeric: tabular-nums;
   }
   .authors { font-weight: 600; }
-  .title { font-style: italic; }
-  .venue { color: var(--ink-soft); }
+  .ref-title { font-style: italic; }
+  .venue { color: #4a4a4a; }
   .ident {
-    display: block; font-family: var(--mono); font-size: 0.78rem;
-    margin-top: 0.3rem; overflow-wrap: anywhere;
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.85rem;
+    overflow-wrap: anywhere;
   }
-  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-  a:hover { text-decoration-thickness: 2px; }
 
-  footer {
-    margin-top: 3.5rem; padding-top: 1.3rem; border-top: 1px solid var(--rule);
-    font-size: 0.85rem; color: var(--ink-faint); line-height: 1.6;
+  a, a:visited { color: #3273dc; }
+
+  .footer {
+    background-color: #fafafa;
+    padding: 3rem 1.5rem 4rem;
   }
 </style>
+</head>
+<body>
 
-<div class="wrap">
-  <header>
-    <!-- EDIT ME: match the eyebrow and title to the poster as printed. -->
-    <p class="eyebrow">Poster references &middot; July 2026</p>
-    <h1>References</h1>
-    <p class="standfirst">Does interpolation in weight space produce interpolation in style space? Full citation list for the poster, with links to every source.</p>
-  </header>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Music Interpolation</h1>
+          <h2 class="subtitle publication-subtitle">
+            Does weight interpolation between era-specific fine-tunes approximate
+            transitional-era music as well as fine-tuning on transitional data?
+          </h2>
 
-  <h2>Works cited</h2>
-  <p class="sub">Cited in the background section, in the order an alphabetical list puts them.</p>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Kevin Ma<sup>1</sup>,</span>
+            <span class="author-block">Sharvil Phadke<sup>1</sup>,</span>
+            <span class="author-block">Rudraansh Korlakunta<sup>1</sup>,</span>
+            <span class="author-block">Charlie Wang<sup>1</sup></span>
+          </div>
 
-  <ol class="refs">
-    <li>
-      <span class="authors">Bradshaw, L., Fan, H., Spangher, A., Biderman, S., &amp; Colton, S.</span> (2025).
-      <span class="title">Scaling self-supervised representation learning for symbolic piano performance.</span>
-      <span class="venue">Proceedings of the 26th International Society for Music Information Retrieval Conference (ISMIR 2025).</span>
-      <a class="ident" href="https://arxiv.org/abs/2506.23869">arXiv:2506.23869</a>
-    </li>
-    <li>
-      <span class="authors">Ilharco, G., Ribeiro, M. T., Wortsman, M., Gururangan, S., Schmidt, L., Hajishirzi, H., &amp; Farhadi, A.</span> (2023).
-      <span class="title">Editing models with task arithmetic.</span>
-      <span class="venue">The Eleventh International Conference on Learning Representations (ICLR 2023).</span>
-      <a class="ident" href="https://arxiv.org/abs/2212.04089">arXiv:2212.04089</a>
-    </li>
-    <li>
-      <span class="authors">McKay, C., Cumming, J., &amp; Fujinaga, I.</span> (2018).
-      <span class="title">jSymbolic 2.2: Extracting features from symbolic music for use in musicological and MIR research.</span>
-      <span class="venue">Proceedings of the 19th International Society for Music Information Retrieval Conference (ISMIR 2018), 348&ndash;354.</span>
-      <a class="ident" href="https://jmir.sourceforge.net/jSymbolic.html">jmir.sourceforge.net/jSymbolic.html</a>
-    </li>
-    <li>
-      <span class="authors">Shankar, N. B., Wang, Z., Eren, E., &amp; Alwan, A.</span> (2025).
-      <span class="title">Selective attention merging for low resource tasks: A case study of child ASR.</span>
-      <span class="venue">ICASSP 2025 &mdash; IEEE International Conference on Acoustics, Speech and Signal Processing.</span>
-      <a class="ident" href="https://arxiv.org/abs/2501.08468">arXiv:2501.08468</a>
-    </li>
-  </ol>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block affiliation"><sup>1</sup>COSMOS, University of California, Los Angeles</span>
+          </div>
 
-  <h2>Data sources</h2>
-  <p class="sub">The score-derived corpora the fine-tuning corpus is built from.</p>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#works-cited" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-book"></i></span>
+                  <span>Works cited</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#data-sources" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-database"></i></span>
+                  <span>Data sources</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <ol class="refs">
-    <li>
-      <span class="authors">Foscarin, F., McLeod, A., Rigaux, P., Jacquemard, F., &amp; Sakai, M.</span> (2020).
-      <span class="title">ASAP: A dataset of aligned scores and performances for piano transcription.</span>
-      <span class="venue">Proceedings of the 21st International Society for Music Information Retrieval Conference (ISMIR 2020), 534&ndash;541.</span>
-      <a class="ident" href="https://github.com/fosfrancesco/asap-dataset">github.com/fosfrancesco/asap-dataset</a>
-    </li>
-    <li>
-      <span class="authors">Hentschel, J., Rammos, Y., Neuwirth, M., &amp; Rohrmeier, M.</span> (2025).
-      <span class="title">A corpus and a modular infrastructure for the empirical study of (an)notated music.</span>
-      <span class="venue">Scientific Data, 12(1), 685. The DCML Distant Listening Corpus.</span>
-      <a class="ident" href="https://doi.org/10.1038/s41597-025-04976-z">doi:10.1038/s41597-025-04976-z</a>
-    </li>
-    <li>
-      <span class="authors">Long, P., Novack, Z., Berg-Kirkpatrick, T., &amp; McAuley, J.</span> (2025).
-      <span class="title">PDMX: A large-scale public domain MusicXML dataset for symbolic music processing.</span>
-      <span class="venue">ICASSP 2025 &mdash; IEEE International Conference on Acoustics, Speech and Signal Processing.</span>
-      <a class="ident" href="https://doi.org/10.5281/zenodo.15571083">doi:10.5281/zenodo.15571083</a>
-    </li>
-    <li>
-      <span class="authors">Sapp, C. S.</span> (2005).
-      <span class="title">Online database of scores in the Humdrum file format.</span>
-      <span class="venue">Proceedings of the 6th International Conference on Music Information Retrieval (ISMIR 2005), 664&ndash;665. KernScores.</span>
-      <a class="ident" href="https://github.com/craigsapp">github.com/craigsapp</a>
-    </li>
-  </ol>
+<section class="section" id="works-cited">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Works cited</h2>
+        <div class="content" style="margin-top: 2rem;">
+          <ol class="ref-list">
+            <li>
+              <span class="authors">Bradshaw, L., Fan, H., Spangher, A., Biderman, S., &amp; Colton, S.</span> (2025).
+              <span class="ref-title">Scaling self-supervised representation learning for symbolic piano performance.</span>
+              <span class="venue">Proceedings of the 26th International Society for Music Information Retrieval Conference (ISMIR 2025).</span>
+              <a class="ident" href="https://arxiv.org/abs/2506.23869">arXiv:2506.23869</a>
+            </li>
+            <li>
+              <span class="authors">Ilharco, G., Ribeiro, M. T., Wortsman, M., Gururangan, S., Schmidt, L., Hajishirzi, H., &amp; Farhadi, A.</span> (2023).
+              <span class="ref-title">Editing models with task arithmetic.</span>
+              <span class="venue">The Eleventh International Conference on Learning Representations (ICLR 2023).</span>
+              <a class="ident" href="https://arxiv.org/abs/2212.04089">arXiv:2212.04089</a>
+            </li>
+            <li>
+              <span class="authors">McKay, C., Cumming, J., &amp; Fujinaga, I.</span> (2018).
+              <span class="ref-title">jSymbolic 2.2: Extracting features from symbolic music for use in musicological and MIR research.</span>
+              <span class="venue">Proceedings of the 19th International Society for Music Information Retrieval Conference (ISMIR 2018), 348&ndash;354.</span>
+              <a class="ident" href="https://jmir.sourceforge.net/jSymbolic.html">jmir.sourceforge.net/jSymbolic.html</a>
+            </li>
+            <li>
+              <span class="authors">Shankar, N. B., Wang, Z., Eren, E., &amp; Alwan, A.</span> (2025).
+              <span class="ref-title">Selective attention merging for low resource tasks: A case study of child ASR.</span>
+              <span class="venue">ICASSP 2025 &mdash; IEEE International Conference on Acoustics, Speech and Signal Processing.</span>
+              <a class="ident" href="https://arxiv.org/abs/2501.08468">arXiv:2501.08468</a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <p>musicinterp &middot; last updated July 2026. Every link above was resolved against the primary source.</p>
-  </footer>
-</div>
+<section class="section" id="data-sources" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Data sources</h2>
+        <p class="has-text-centered has-text-grey">
+          The score-derived corpora the fine-tuning corpus is built from.
+        </p>
+        <div class="content" style="margin-top: 2rem;">
+          <ol class="ref-list">
+            <li>
+              <span class="authors">Foscarin, F., McLeod, A., Rigaux, P., Jacquemard, F., &amp; Sakai, M.</span> (2020).
+              <span class="ref-title">ASAP: A dataset of aligned scores and performances for piano transcription.</span>
+              <span class="venue">Proceedings of the 21st International Society for Music Information Retrieval Conference (ISMIR 2020), 534&ndash;541.</span>
+              <a class="ident" href="https://github.com/fosfrancesco/asap-dataset">github.com/fosfrancesco/asap-dataset</a>
+            </li>
+            <li>
+              <span class="authors">Hentschel, J., Rammos, Y., Neuwirth, M., &amp; Rohrmeier, M.</span> (2025).
+              <span class="ref-title">A corpus and a modular infrastructure for the empirical study of (an)notated music.</span>
+              <span class="venue">Scientific Data, 12(1), 685. The DCML Distant Listening Corpus.</span>
+              <a class="ident" href="https://doi.org/10.1038/s41597-025-04976-z">doi:10.1038/s41597-025-04976-z</a>
+            </li>
+            <li>
+              <span class="authors">Long, P., Novack, Z., Berg-Kirkpatrick, T., &amp; McAuley, J.</span> (2025).
+              <span class="ref-title">PDMX: A large-scale public domain MusicXML dataset for symbolic music processing.</span>
+              <span class="venue">ICASSP 2025 &mdash; IEEE International Conference on Acoustics, Speech and Signal Processing.</span>
+              <a class="ident" href="https://doi.org/10.5281/zenodo.15571083">doi:10.5281/zenodo.15571083</a>
+            </li>
+            <li>
+              <span class="authors">Sapp, C. S.</span> (2005).
+              <span class="ref-title">Online database of scores in the Humdrum file format.</span>
+              <span class="venue">Proceedings of the 6th International Conference on Music Information Retrieval (ISMIR 2005), 664&ndash;665. KernScores.</span>
+              <a class="ident" href="https://github.com/craigsapp">github.com/craigsapp</a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered content">
+        <p>
+          This page uses the layout of the
+          <a href="https://nerfies.github.io/">Nerfies</a> project page,
+          released under a
+          <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
